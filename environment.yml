@@ -1,0 +1,45 @@
+name: sponsors
+dependencies:
+- cffi=1.6.0=py35_0
+- cryptography=1.4=py35_0
+- idna=2.1=py35_0
+- libxml2=2.9.2=0
+- libxslt=1.1.28=2
+- lxml=3.6.0=py35_0
+- openssl=1.0.2h=1
+- pip=8.1.2=py35_0
+- pyasn1=0.1.9=py35_0
+- pycparser=2.14=py35_1
+- pymysql=0.6.7=py35_0
+- pyopenssl=0.16.0=py35_0
+- python=3.5.2=0
+- queuelib=1.4.2=py35_0
+- readline=6.2=2
+- scrapinghub::characteristic=14.3.0=py35_0
+- scrapinghub::cssselect=0.9.1=py35_0
+- scrapinghub::parsel=1.0.1=py35_0
+- scrapinghub::pyasn1-modules=0.0.5=py35_0
+- scrapinghub::pydispatcher=2.0.5=py35_0
+- scrapinghub::scrapy=1.1.0=py35_0
+- scrapinghub::service_identity=14.0.0=py35_0
+- setuptools=23.0.0=py35_0
+- six=1.10.0=py35_0
+- sqlalchemy=1.0.13=py35_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- twisted=16.2.0=py35_0
+- w3lib=1.14.2=py35_0
+- wheel=0.29.0=py35_0
+- xz=5.2.2=0
+- zlib=1.2.8=3
+- zope.interface=4.2.0=py35_0
+- pip:
+  - characteristic==14.3.0
+  - cssselect==0.9.1
+  - parsel==1.0.1
+  - pyasn1-modules==0.0.5
+  - pydispatcher==2.0.5
+  - scrapy==1.1.0
+  - service-identity==14.0.0
+prefix: /Users/Austin/anaconda/envs/sponsors
+
