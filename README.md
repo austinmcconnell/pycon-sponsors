@@ -4,6 +4,7 @@ Scrape sponsors from pycon website and store in a mysql database.
 
 ## Installation
 Create anaconda environment with the included environment.yml file.
+
 '''
 conda env create -f environment.yml
 '''
