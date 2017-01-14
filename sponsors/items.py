@@ -1,3 +1,7 @@
+"""
+This file defines classes using Scrapy Items and Fields
+which will hold scraped data.
+"""
 from scrapy.item import Item, Field
 
 class Sponsor(Item):
