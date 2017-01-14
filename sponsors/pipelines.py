@@ -2,6 +2,10 @@ from sqlalchemy.orm import sessionmaker
 from sponsors.models import db_create, db_connect, create_tables, Sponsor
 
 class PyConPipeline(object):
+    """
+    Pipeline that connects to the database, opens a session to the database,
+    processes individual items, and adds them to the database
+    """
 
     def __init__(self):
 
