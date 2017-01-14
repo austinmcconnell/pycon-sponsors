@@ -45,8 +45,8 @@ class DuplicatesPipeline(object):
         engine = db_connect()
         if not engine.dialect.has_table(engine, table_name='sponsor', schema=None):
             create_tables(engine)
-        Session = sessionmaker(bind=engine)
-        session = Session()
+        session_class = sessionmaker(bind=engine)
+        session = session_class()
 
         for value in session.query(Sponsor.name, Sponsor.year).distinct():
             self.ids_seen.add(value)
