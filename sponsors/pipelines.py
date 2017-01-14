@@ -20,7 +20,9 @@ class PyConPipeline(object):
         self.session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):
-
+        """
+        Process a single item by loading item into model and adding to database.
+        """
         session = self.session()
         sponsor = Sponsor(**item)
 
