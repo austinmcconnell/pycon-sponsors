@@ -53,7 +53,7 @@ class DuplicatesPipeline(object):
     def process_item(self, item, spider):
 
         if (item['name'], item['year']) in self.ids_seen:
-            raise DropItem("Duplicate item found: {:15} {}".format(item['name'], item['year']))
+            raise DropItem("Duplicate item found: {} {}".format(item['year'], item['name']))
         else:
             self.ids_seen.add((item['name'], item['year']))
             return item
