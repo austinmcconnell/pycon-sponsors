@@ -51,7 +51,7 @@ class DuplicatesPipeline(object):
         for value in session.query(Sponsor.name, Sponsor.year).distinct():
             self.ids_seen.add(value)
 
-    def process_item(self, item, spider):
+    def process_item(self, item, spider):    # pylint: disable=unused-argument
         """Check if item name and year match a record already in database."""
 
         if (item['name'], item['year']) in self.ids_seen:
