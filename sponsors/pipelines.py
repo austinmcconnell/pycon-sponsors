@@ -1,3 +1,6 @@
+"""
+Method defines pipeline classes to process items.
+"""
 from sqlalchemy.orm import sessionmaker
 from sponsors.models import db_create, db_connect, create_tables, Sponsor
 
