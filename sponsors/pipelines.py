@@ -12,8 +12,7 @@ class PyConPipeline(object):
 
     def __init__(self):
 
-        engine = db_create()
-        del engine
+        db_create()
 
         engine = db_connect()
         if not engine.dialect.has_table(engine, table_name='sponsor', schema=None):
