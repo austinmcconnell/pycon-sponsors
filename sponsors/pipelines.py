@@ -37,6 +37,7 @@ class DuplicatesPipeline(object):
     """Drop item from pipeline if it has already been processed."""
 
     def __init__(self):
+        """Get distinct (name, year) from database and set as ids_seen."""
         self.ids_seen = set()
 
         db_create()
@@ -51,6 +52,7 @@ class DuplicatesPipeline(object):
             self.ids_seen.add(value)
 
     def process_item(self, item, spider):
+        """Check if item name and year match a record already in database."""
 
         if (item['name'], item['year']) in self.ids_seen:
             raise DropItem("Duplicate item found: {} {}".format(item['year'], item['name']))
