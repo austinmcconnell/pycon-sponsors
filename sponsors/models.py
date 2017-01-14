@@ -35,7 +35,7 @@ class Sponsor(Base):
     SQLAlchemy sponsor model
     """
     __tablename__ = 'sponsor'
-    year = Column(Integer,primary_key=True, nullable=False)
+    year = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(50), primary_key=True, nullable=False)
     url = Column(String(255), nullable=False)
     sponsor_level = Column(String(20), nullable=False)
