@@ -39,5 +39,5 @@ class Sponsor(BASE):
     year = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(50), primary_key=True, nullable=False)
     url = Column(String(255), nullable=False)
-    sponsor_level = Column(String(20), nullable=False)
+    sponsor_level = Column(String(30), nullable=False)
     description = Column(Text, nullable=False)
