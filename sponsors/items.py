@@ -10,3 +10,6 @@ class Sponsor(Item):
     url = Field()
     sponsor_level = Field()
     description = Field()
+
+    def __str__(self):
+        return ''
