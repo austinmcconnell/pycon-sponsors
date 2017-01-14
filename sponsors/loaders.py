@@ -5,6 +5,7 @@ common tasks and simplify the data loading process.
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, Join
 
+
 class SponsorLoader(ItemLoader):
     """
     Accepts ItemLoader and processes input with MapCompose and Join

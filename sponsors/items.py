@@ -4,6 +4,7 @@ which will hold scraped data.
 """
 from scrapy.item import Item, Field
 
+
 class Sponsor(Item):
     """
     Sponsor container for scraped data

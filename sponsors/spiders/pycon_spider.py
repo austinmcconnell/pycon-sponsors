@@ -4,6 +4,7 @@ from sponsors.items import Sponsor
 from sponsors.loaders import SponsorLoader
 from sponsors.settings import YEAR
 
+
 class PyConSpider(Spider):
     """
     Spider for pycon.org/sponsors

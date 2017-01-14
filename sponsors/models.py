@@ -9,6 +9,7 @@ from . import settings
 
 BASE = declarative_base()
 
+
 def db_create():
     """
     Read connect info from settings file and connect to database.
@@ -21,12 +22,14 @@ def db_create():
     engine.execute('CREATE DATABASE IF NOT EXISTS {};'.format(db_name))
     connection_info['database'] = db_name
 
+
 def db_connect():
     """
     Perform database connection using database settings from settings.py.
     :return: sqlalchemy engine instance
     """
     return create_engine(URL(**settings.DATABASE))
+
 
 def create_tables(engine):
     """
@@ -35,6 +38,7 @@ def create_tables(engine):
     :return:
     """
     BASE.metadata.create_all(engine)
+
 
 class Sponsor(BASE):
     """
