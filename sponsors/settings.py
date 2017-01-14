@@ -25,5 +25,5 @@ ITEM_PIPELINES = {
 
 YEAR = 2016
 
-LOG_LEVEL='WARNING'
-LOG_FORMAT='[%(name)s] %(levelname)s: %(message)s'
+LOG_LEVEL = 'WARNING'
+LOG_FORMAT = '[%(name)s] %(levelname)s: %(message)s'
