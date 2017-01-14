@@ -1,4 +1,5 @@
 """Read in settings from configuration file and declare other needed settings."""
+# pylint: disable=invalid-name
 import configparser
 
 config = configparser.ConfigParser()
