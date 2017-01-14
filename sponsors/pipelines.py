@@ -18,11 +18,11 @@ class PyConPipeline(object):
         engine = db_connect()
         if not engine.dialect.has_table(engine, table_name='sponsor', schema=None):
             create_tables(engine)
-        self.Session = sessionmaker(bind=engine)
+        self.session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):
 
-        session = self.Session()
+        session = self.session()
         sponsor = Sponsor(**item)
 
         try:
