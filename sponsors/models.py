@@ -10,7 +10,9 @@ from . import settings
 Base = declarative_base()
 
 def db_create():
-
+    """
+    Read connect info from settings file and connect to database.
+    """
     connection_info = settings.DATABASE
     db_name = connection_info['database']
     del connection_info['database']
