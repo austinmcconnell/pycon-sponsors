@@ -6,6 +6,8 @@ from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, Join
 
 class SponsorLoader(ItemLoader):
-
+    """
+    Accepts ItemLoader and processes input with MapCompose and Join
+    """
     default_input_processor = MapCompose(str.strip)
     default_output_processor = Join()
