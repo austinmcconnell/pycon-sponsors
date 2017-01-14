@@ -10,6 +10,7 @@ help:
 lint:
 	pylint --rcfile=.pylintrc --output-format=parseable --reports=no sponsors
 	pycodestyle sponsors --max-line-length=100
+	pydocstyle sponsors
 
 test:
 	pytest --verbose --color=yes sponsors
