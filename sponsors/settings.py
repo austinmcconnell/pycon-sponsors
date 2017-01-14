@@ -18,7 +18,10 @@ DATABASE = {
     'query': {"charset": "utf8"}
 }
 
-ITEM_PIPELINES = {'sponsors.pipelines.PyConPipeline': 1}
+ITEM_PIPELINES = {
+    'sponsors.pipelines.DuplicatesPipeline': 1,
+    'sponsors.pipelines.PyConPipeline': 2,
+}
 
 YEAR = 2016
 

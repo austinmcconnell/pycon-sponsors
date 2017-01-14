@@ -1,4 +1,5 @@
 """Method defines pipeline classes to process items."""
+from scrapy.exceptions import DropItem
 from sqlalchemy.orm import sessionmaker
 from sponsors.models import db_create, db_connect, create_tables, Sponsor
 
@@ -30,3 +31,29 @@ class PyConPipeline(object):
             session.close()
 
         return item
+
+
+class DuplicatesPipeline(object):
+    """Drop item from pipeline if it has already been processed."""
+
+    def __init__(self):
+        self.ids_seen = set()
+
+        db_create()
+
+        engine = db_connect()
+        if not engine.dialect.has_table(engine, table_name='sponsor', schema=None):
+            create_tables(engine)
+        Session = sessionmaker(bind=engine)
+        session = Session()
+
+        for value in session.query(Sponsor.name, Sponsor.year).distinct():
+            self.ids_seen.add(value)
+
+    def process_item(self, item, spider):
+
+        if (item['name'], item['year']) in self.ids_seen:
+            raise DropItem("Duplicate item found: {:15} {}".format(item['name'], item['year']))
+        else:
+            self.ids_seen.add((item['name'], item['year']))
+            return item
