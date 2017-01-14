@@ -20,7 +20,7 @@ class PyConPipeline(object):
             create_tables(engine)
         self.session = sessionmaker(bind=engine)
 
-    def process_item(self, item, spider):  #pylint: disable=unused-argument
+    def process_item(self, item, spider):  # pylint: disable=unused-argument
         """
         Process a single item by loading item into model and adding to database.
         """

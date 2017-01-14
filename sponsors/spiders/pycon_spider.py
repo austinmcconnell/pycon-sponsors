@@ -15,7 +15,7 @@ class PyConSpider(Spider):
 
     search_list_xpath = '//*[@class="sponsor-content"]'
     search_fields = {
-        'name':'./h4/text()',
+        'name': './h4/text()',
         'url': './p[1]/a/text()',
         'sponsor_level': '../../../../h2/text()',
         'description': './p[3]/text()'
@@ -34,7 +34,7 @@ class PyConSpider(Spider):
 
             # Iterate over fields and add xpath to the loader
             for field, xpath in iter(self.search_fields.items()):
-                loader.add_xpath(field,xpath)
+                loader.add_xpath(field, xpath)
 
             item = loader.load_item()
             item['year'] = YEAR
