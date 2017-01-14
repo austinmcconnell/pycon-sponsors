@@ -1,6 +1,7 @@
 """
-Define database table structure. Also included are functions that connect to
-the database and create all necessary tables.
+Define database table structure.
+
+Functions that connect to the database and create all necessary tables are included.
 """
 from sqlalchemy import create_engine, Column, String, Text, Integer
 from sqlalchemy.ext.declarative import declarative_base
@@ -11,9 +12,7 @@ BASE = declarative_base()
 
 
 def db_create():
-    """
-    Read connect info from settings file and connect to database.
-    """
+    """Read connect info from settings file and connect to database."""
     connection_info = settings.DATABASE
     db_name = connection_info['database']
     del connection_info['database']
@@ -24,26 +23,18 @@ def db_create():
 
 
 def db_connect():
-    """
-    Perform database connection using database settings from settings.py.
-    :return: sqlalchemy engine instance
-    """
+    """Perform database connection using database settings from settings.py."""
     return create_engine(URL(**settings.DATABASE))
 
 
 def create_tables(engine):
-    """
-    Create tables in database
-    :param engine:
-    :return:
-    """
+    """Create tables in database."""
     BASE.metadata.create_all(engine)
 
 
 class Sponsor(BASE):
-    """
-    SQLAlchemy sponsor model
-    """
+    """SQLAlchemy sponsor model."""
+
     __tablename__ = 'sponsor'
     year = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(50), primary_key=True, nullable=False)

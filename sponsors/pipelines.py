@@ -1,18 +1,13 @@
-"""
-Method defines pipeline classes to process items.
-"""
+"""Method defines pipeline classes to process items."""
 from sqlalchemy.orm import sessionmaker
 from sponsors.models import db_create, db_connect, create_tables, Sponsor
 
 
 class PyConPipeline(object):
-    """
-    Pipeline that connects to the database, opens a session to the database,
-    processes individual items, and adds them to the database
-    """
+    """Connects to database, opens a session, and processes individual items."""
 
     def __init__(self):
-
+        """Create database if necesary and get engine."""
         db_create()
 
         engine = db_connect()
@@ -21,9 +16,7 @@ class PyConPipeline(object):
         self.session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):  # pylint: disable=unused-argument
-        """
-        Process a single item by loading item into model and adding to database.
-        """
+        """Process a single item by loading item into model and adding to database."""
         session = self.session()
         sponsor = Sponsor(**item)
 

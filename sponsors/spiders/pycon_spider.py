@@ -1,3 +1,4 @@
+"""Spider to scrape sponsors from us.pycon.org."""
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from sponsors.items import Sponsor
@@ -6,9 +7,8 @@ from sponsors.settings import YEAR
 
 
 class PyConSpider(Spider):
-    """
-    Spider for pycon.org/sponsors
-    """
+    """Spider for pycon.org/sponsors."""
+
     name = 'pycon'
     allowed_domains = ['us.pycon.org']
     start_urls = ['https://us.pycon.org/{}/sponsors'.format(YEAR)]
@@ -22,9 +22,7 @@ class PyConSpider(Spider):
     }
 
     def parse(self, response):
-        """
-        Default callback used by Scrapy to process downloaded reponses
-        """
+        """Default callback used by Scrapy to process downloaded reponses."""
         selector = Selector(response)
 
         # Iterate over properties
