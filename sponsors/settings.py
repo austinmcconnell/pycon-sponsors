@@ -1,3 +1,6 @@
+"""
+Read in settings from configuration file and declare other needed settings.
+"""
 import configparser
 
 config = configparser.ConfigParser()
