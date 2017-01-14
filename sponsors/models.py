@@ -1,3 +1,7 @@
+"""
+Define database table structure. Also included are functions that connect to
+the database and create all necessary tables.
+"""
 from sqlalchemy import create_engine, Column, String, Text, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
