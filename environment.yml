@@ -1,4 +1,4 @@
-name: pycon-sponsors2
+name: pycon-sponsors
 channels:
     - scrapinghub
 dependencies:
