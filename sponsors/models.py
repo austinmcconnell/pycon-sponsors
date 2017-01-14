@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
 from . import settings
 
-Base = declarative_base()
+BASE = declarative_base()
 
 def db_create():
     """
@@ -34,9 +34,9 @@ def create_tables(engine):
     :param engine:
     :return:
     """
-    Base.metadata.create_all(engine)
+    BASE.metadata.create_all(engine)
 
-class Sponsor(Base):
+class Sponsor(BASE):
     """
     SQLAlchemy sponsor model
     """
