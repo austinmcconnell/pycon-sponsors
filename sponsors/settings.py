@@ -3,8 +3,8 @@ Read in settings from configuration file and declare other needed settings.
 """
 import configparser
 
-config = configparser.ConfigParser()
-config.read('sponsors/config')
+CONFIG = configparser.ConfigParser()
+CONFIG.read('sponsors/config')
 
 BOT_NAME = 'pyconbot'
 
@@ -12,11 +12,11 @@ SPIDER_MODULES = ['sponsors.spiders']
 
 DATABASE = {
     'drivername': 'mysql+pymysql',
-    'host': config['database']['host'],
-    'port': config['database']['port'],
-    'username': config['database']['username'],
-    'password': config['database']['password'],
-    'database': config['database']['database'],
+    'host': CONFIG['database']['host'],
+    'port': CONFIG['database']['port'],
+    'username': CONFIG['database']['username'],
+    'password': CONFIG['database']['password'],
+    'database': CONFIG['database']['database'],
     'query': {"charset": "utf8"}
 }
 
