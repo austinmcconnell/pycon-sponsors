@@ -12,4 +12,5 @@ class Sponsor(Item):
     description = Field()
 
     def __str__(self):
+        """Overwriting str method to stop massive output vomit when scrapy is run."""
         return ''

@@ -53,7 +53,6 @@ class DuplicatesPipeline(object):
 
     def process_item(self, item, spider):    # pylint: disable=unused-argument
         """Check if item name and year match a record already in database."""
-
         if (item['name'], item['year']) in self.ids_seen:
             raise DropItem("Duplicate item found: {} {}".format(item['year'], item['name']))
         else:
