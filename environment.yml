@@ -6,6 +6,3 @@ dependencies:
     - scrapy=1.1.*
     - sqlalchemy=1.1.*
     - pymysql=0.7.*
-    - pylint=1.5.*
-    - pycodestyle=2.2.*
-    - pydocstyle=1.1.*
