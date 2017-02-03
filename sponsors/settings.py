@@ -26,7 +26,7 @@ ITEM_PIPELINES = {
 
 YEARS = [2014, 2015, 2016]
 
-LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'INFO'
 LOG_FORMAT = '[%(name)s] %(levelname)s: %(message)s'
 
 AUTOTHROTTLE_ENABLED = True
