@@ -3,7 +3,8 @@ from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from sponsors.items import Sponsor
 from sponsors.loaders import SponsorLoader
-from sponsors.settings import YEAR
+from sponsors.settings import YEARS
+import re
 
 
 class PyConSpider(Spider):
@@ -11,7 +12,9 @@ class PyConSpider(Spider):
 
     name = 'pycon'
     allowed_domains = ['us.pycon.org']
-    start_urls = ['https://us.pycon.org/{}/sponsors'.format(YEAR)]
+    start_urls = []
+    for year in YEARS:
+        start_urls.append('https://us.pycon.org/{}/sponsors'.format(year))
 
     search_list_xpath = '//*[@class="sponsor-content"]'
     search_fields = {
@@ -34,7 +37,8 @@ class PyConSpider(Spider):
             for field, xpath in iter(self.search_fields.items()):
                 loader.add_xpath(field, xpath)
 
+            m = re.search('\d\d\d\d', response.request.url)
             item = loader.load_item()
-            item['year'] = YEAR
+            item['year'] = m.group(0)
 
             yield item
