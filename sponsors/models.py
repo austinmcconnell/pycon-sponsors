@@ -18,7 +18,7 @@ def db_create():
     del connection_info['database']
 
     engine = create_engine(URL(**connection_info))
-    engine.execute('CREATE DATABASE IF NOT EXISTS {};'.format(db_name))
+    engine.execute('CREATE DATABASE IF NOT EXISTS `{}`;'.format(db_name))
     connection_info['database'] = db_name
 
 
